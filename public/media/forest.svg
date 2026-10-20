@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" fill="none">
+  <defs>
+    <linearGradient id="forest" x2=".2" y2="1"><stop stop-color="#b3c097"/><stop offset=".45" stop-color="#476e41"/><stop offset="1" stop-color="#183b27"/></linearGradient>
+    <pattern id="leaves" width="115" height="100" patternUnits="userSpaceOnUse"><rect width="115" height="100" fill="url(#forest)"/><circle cx="22" cy="24" r="27" fill="#466d3a"/><circle cx="76" cy="19" r="28" fill="#70864b"/><circle cx="53" cy="66" r="33" fill="#244d31"/><circle cx="111" cy="71" r="32" fill="#557644"/><circle cx="10" cy="84" r="23" fill="#31593a"/></pattern>
+  </defs>
+  <rect width="900" height="340" fill="url(#leaves)"/>
+  <path d="M0 49 147 0l119 57 168-49 122 68L705 3l195 49v62l-151 56-183-35-157 72-187-77L0 197Z" fill="#426b3d" opacity=".66"/>
+  <path d="m119 340 182-140 97 24 107-49 154 56 142-77 99 37v149z" fill="#253e31" opacity=".6"/>
+  <g fill="#8e9d58" opacity=".86"><circle cx="100" cy="151" r="38"/><circle cx="355" cy="94" r="34"/><circle cx="543" cy="139" r="41"/><circle cx="759" cy="230" r="37"/><circle cx="218" cy="272" r="39"/><circle cx="682" cy="71" r="30"/></g>
+  <g fill="#a0a762" opacity=".8"><circle cx="52" cy="237" r="25"/><circle cx="259" cy="66" r="22"/><circle cx="449" cy="266" r="26"/><circle cx="634" cy="227" r="28"/><circle cx="853" cy="144" r="25"/></g>
+</svg>

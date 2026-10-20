@@ -1,0 +1,9 @@
+{
+  "name": "aeroview",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Видеоплатформа для аэросъёмки",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

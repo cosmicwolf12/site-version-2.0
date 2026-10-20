@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111827">
+    <meta name="description" content="AeroView — библиотека видеозаписей с дронов.">
+    <title>Видео с дронов — AeroView</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="AeroView — обзор">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5.2v5.1m0 3.4v5.1M5.2 12h5.1m3.4 0h5.1"/><circle cx="12" cy="12" r="2.1"/></svg></span>
+          <span>AeroView</span>
+        </a>
+        <nav class="primary-nav" aria-label="Основная навигация">
+          <a class="nav-link" href="#overview" data-view="overview"><span class="nav-icon" data-icon="overview"></span><span>Обзор</span></a>
+          <a class="nav-link is-active" href="#videos" data-view="videos"><span class="nav-icon" data-icon="video"></span><span>Видео с дронов</span></a>
+          <a class="nav-link" href="#reports" data-view="reports"><span class="nav-icon" data-icon="reports"></span><span>Отчёты</span></a>
+          <a class="nav-link" href="#statistics" data-view="statistics"><span class="nav-icon" data-icon="statistics"></span><span>Статистика</span></a>
+          <a class="nav-link" href="#maps" data-view="maps"><span class="nav-icon" data-icon="maps"></span><span>Карты</span></a>
+        </nav>
+        <button class="account" type="button" aria-label="Профиль администратора">
+          <span class="avatar avatar-dark">А</span>
+          <span class="account-copy"><strong>Администратор</strong><span>Админ</span></span>
+          <span class="account-chevron" data-icon="chevronDown"></span>
+        </button>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <button class="menu-toggle icon-button" type="button" aria-label="Открыть меню" aria-expanded="false"><span data-icon="menu"></span></button>
+          <div class="topbar-heading"><h1 id="page-title">Видео с дронов</h1><span class="project-pill"><span class="project-dot"></span>Проект: Северный карьер</span></div>
+          <div class="topbar-actions">
+            <button class="icon-button notification-button" type="button" aria-label="Уведомления"><span data-icon="bell"></span><span class="notification-dot"></span></button>
+            <button class="avatar avatar-light" type="button" aria-label="Профиль администратора">А</button>
+          </div>
+        </header>
+
+        <main id="main-content">
+          <section class="videos-view" id="videos-view">
+            <div class="catalog-panel">
+              <div class="catalog-top">
+                <div class="filter-tabs" role="tablist" aria-label="Статус видео">
+                  <button type="button" class="filter-tab is-active" data-status=""><span>Все</span><span class="tab-count" data-count="all">1 248</span></button>
+                  <button type="button" class="filter-tab" data-status="processed"><span>Обработанные</span><span class="tab-count" data-count="processed">1 240</span></button>
+                  <button type="button" class="filter-tab" data-status="processing"><span>В обработке</span><span class="tab-count" data-count="processing">6</span></button>
+                  <button type="button" class="filter-tab" data-status="failed"><span>Ошибки</span><span class="tab-count" data-count="failed">2</span></button>
+                </div>
+                <label class="search-field">
+                  <span class="visually-hidden">Поиск по названию</span>
+                  <input id="search-input" type="search" maxlength="200" placeholder="Поиск по названию" autocomplete="off">
+                  <span class="field-icon" data-icon="search"></span>
+                </label>
+              </div>
+
+              <div class="catalog-toolbar">
+                <div class="select-group">
+                  <label class="select-field drone-field">
+                    <span class="visually-hidden">Фильтр по дрону</span>
+                    <select id="drone-select">
+                      <option value="">Все дроны</option>
+                      <option value="DJI Matrice 350">DJI Matrice 350</option>
+                      <option value="DJI Mavic 3E">DJI Mavic 3E</option>
+                      <option value="Загруженное видео">Загруженное видео</option>
+                    </select><span data-icon="chevronDown"></span>
+                  </label>
+                  <label class="select-field period-field">
+                    <span class="visually-hidden">Фильтр по периоду</span>
+                    <select id="period-select">
+                      <option value="all">За всё время</option>
+                      <option value="today">Сегодня</option>
+                      <option value="week">За 7 дней</option>
+                      <option value="month">За месяц</option>
+                    </select><span data-icon="calendar"></span>
+                  </label>
+                </div>
+                <label class="sort-field"><span class="sort-label">Сортировка</span>
+                  <select id="sort-select">
+                    <option value="newest">Сначала новые</option>
+                    <option value="oldest">Сначала старые</option>
+                    <option value="name">По названию</option>
+                    <option value="size">По размеру</option>
+                  </select><span data-icon="sort"></span>
+                </label>
+              </div>
+
+              <div id="catalog-message" class="catalog-message" role="status" hidden></div>
+              <div id="video-grid" class="video-grid" aria-live="polite"></div>
+              <div class="catalog-footer">
+                <span id="results-label" class="results-label">Загружаем библиотеку…</span>
+                <nav class="pagination" id="pagination" aria-label="Страницы"></nav>
+              </div>
+            </div>
+
+            <section class="library-section" aria-labelledby="library-title">
+              <div class="library-heading">
+                <div>
+                  <h2 id="library-title">Библиотека записей</h2>
+                  <p>Все полёты и результаты обработки в одном месте</p>
+                </div>
+                <button type="button" class="button button-primary upload-trigger"><span data-icon="upload"></span>Загрузить видео</button>
+              </div>
+              <button type="button" class="dropzone" id="dropzone" aria-label="Выбрать видео или перетащить файлы">
+                <span class="upload-icon"><span data-icon="cloudUpload"></span></span>
+                <span class="dropzone-copy"><strong>Перетащите видео сюда или <span>выберите файлы</span></strong><small>MP4, MOV, AVI · до 10 ГБ на файл · файлы сохраняются в локальную библиотеку</small></span>
+                <span class="storage-widget"><span class="storage-label">Хранилище: <strong>186</strong> из 500 ГБ</span><span class="storage-track"><span class="storage-used"></span></span></span>
+              </button>
+              <input id="file-input" class="visually-hidden" type="file" accept=".mp4,.mov,.avi,video/mp4,video/quicktime,video/x-msvideo" multiple>
+              <div id="upload-queue" class="upload-queue" aria-live="polite"></div>
+            </section>
+          </section>
+
+          <section id="secondary-view" class="secondary-view" hidden></section>
+        </main>
+      </div>
+    </div>
+
+    <div class="toast-region" id="toast-region" aria-live="polite"></div>
+    <div class="modal-layer" id="modal-layer" hidden></div>
+  </body>
+</html>

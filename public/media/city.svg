@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" fill="none">
+  <defs><pattern id="streets" width="175" height="136" patternUnits="userSpaceOnUse" patternTransform="rotate(-11)"><rect width="175" height="136" fill="#81918e"/><path d="M0 0h175v136H0z" fill="#92988f"/><path d="M0 34h175M0 93h175M56 0v136M122 0v136" stroke="#d7d5c8" stroke-width="12"/><path d="M0 42h175M0 101h175M65 0v136M131 0v136" stroke="#717e7b" stroke-width="2"/></pattern></defs>
+  <rect width="900" height="340" fill="url(#streets)"/>
+  <g stroke="#eee6d1" stroke-width="7" opacity=".9"><path d="M337-25 299 365"/><path d="M-15 217 921 153"/></g>
+  <g fill="#d3c1a4" stroke="#f3ead6" stroke-width="4"><path d="m35 22 40-8 15 34-47 8z"/><path d="m148 60 50-10 15 38-54 8z"/><path d="m230 25 44 9-7 32-48-10z"/><path d="m392 11 51-12 15 37-57 13z"/><path d="m511 42 43-7 9 36-44 9z"/><path d="m622 8 50 13-12 35-49-12z"/><path d="m775 26 54 7-7 41-54-8z"/><path d="m53 113 55-9 12 38-60 10z"/><path d="m170 146 47-7 10 35-49 8z"/><path d="m386 97 52 5-3 41-55-5z"/><path d="m490 119 39-15 19 34-44 17z"/><path d="m663 100 49 4-3 39-50-4z"/><path d="m785 132 48-11 13 38-50 12z"/><path d="m59 252 47-13 17 37-50 17z"/><path d="m175 235 51 4-3 42-54-5z"/><path d="m390 207 43 9-8 39-46-9z"/><path d="m507 249 57-9 5 41-59 9z"/><path d="m658 217 50 12-9 41-51-11z"/><path d="m794 259 50-13 14 37-52 17z"/></g>
+  <g fill="#678772"><circle cx="293" cy="98" r="11"/><circle cx="321" cy="85" r="13"/><circle cx="605" cy="189" r="15"/><circle cx="622" cy="181" r="12"/><circle cx="110" cy="191" r="12"/><circle cx="146" cy="193" r="13"/></g>
+  <path d="M0 326 900 264" stroke="#ece7da" stroke-width="13" opacity=".85"/>
+</svg>
